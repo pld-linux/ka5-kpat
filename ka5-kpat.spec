@@ -41,6 +41,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
+Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	gtk-update-icon-cache
 Requires:	Qt5Core >= %{qtver}
 Requires:	Qt5Svg >= %{qtver}
@@ -104,10 +105,12 @@ rm -rf $RPM_BUILD_ROOT
 %post
 %update_mime_database
 %update_icon_cache hicolor
+%update_desktop_database
 
 %postun
 %update_mime_database
 %update_icon_cache hicolor
+%update_desktop_database
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
