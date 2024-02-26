@@ -1,41 +1,41 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	23.08.4
+%define		kdeappsver	24.01.95
 %define		kframever	5.91.0
 %define		qtver		5.15.2
 %define		kaname		kpat
 Summary:	kpat
 Name:		ka5-%{kaname}
-Version:	23.08.4
-Release:	1
+Version:	24.01.95
+Release:	0.1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications/Games
-Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	ed2abdbd40d91ab6c14fc92fffe18039
+Source0:	https://download.kde.org/unstable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	c401afce331725caa7c7e4ac9323f6d0
 URL:		http://www.kde.org/
-BuildRequires:	Qt5Core-devel >= %{qtver}
-BuildRequires:	Qt5Svg-devel >= %{qtver}
-BuildRequires:	Qt5Test-devel >= %{qtver}
-BuildRequires:	Qt5Widgets-devel >= %{qtver}
+BuildRequires:	Qt6Core-devel >= %{qtver}
+BuildRequires:	Qt6Svg-devel >= %{qtver}
+BuildRequires:	Qt6Test-devel >= %{qtver}
+BuildRequires:	Qt6Widgets-devel >= %{qtver}
 BuildRequires:	cmake >= 3.20
 BuildRequires:	freecell-solver-devel
 BuildRequires:	gettext-tools
 BuildRequires:	ka5-libkdegames-devel >= 22.03.80
-BuildRequires:	kf5-extra-cmake-modules >= %{kframever}
-BuildRequires:	kf5-kcompletion-devel >= %{kframever}
-BuildRequires:	kf5-kconfig-devel >= %{kframever}
-BuildRequires:	kf5-kconfigwidgets-devel >= %{kframever}
-BuildRequires:	kf5-kcoreaddons-devel >= %{kframever}
-BuildRequires:	kf5-kcrash-devel >= %{kframever}
-BuildRequires:	kf5-kdbusaddons-devel >= %{kframever}
-BuildRequires:	kf5-kdoctools-devel >= %{kframever}
-BuildRequires:	kf5-kguiaddons-devel >= %{kframever}
-BuildRequires:	kf5-ki18n-devel >= %{kframever}
-BuildRequires:	kf5-kio-devel >= %{kframever}
-BuildRequires:	kf5-knewstuff-devel >= %{kframever}
-BuildRequires:	kf5-kwidgetsaddons-devel >= %{kframever}
-BuildRequires:	kf5-kxmlgui-devel >= %{kframever}
+BuildRequires:	kf6-extra-cmake-modules >= %{kframever}
+BuildRequires:	kf6-kcompletion-devel >= %{kframever}
+BuildRequires:	kf6-kconfig-devel >= %{kframever}
+BuildRequires:	kf6-kconfigwidgets-devel >= %{kframever}
+BuildRequires:	kf6-kcoreaddons-devel >= %{kframever}
+BuildRequires:	kf6-kcrash-devel >= %{kframever}
+BuildRequires:	kf6-kdbusaddons-devel >= %{kframever}
+BuildRequires:	kf6-kdoctools-devel >= %{kframever}
+BuildRequires:	kf6-kguiaddons-devel >= %{kframever}
+BuildRequires:	kf6-ki18n-devel >= %{kframever}
+BuildRequires:	kf6-kio-devel >= %{kframever}
+BuildRequires:	kf6-knewstuff-devel >= %{kframever}
+BuildRequires:	kf6-kwidgetsaddons-devel >= %{kframever}
+BuildRequires:	kf6-kxmlgui-devel >= %{kframever}
 BuildRequires:	ninja
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.736
@@ -43,23 +43,23 @@ BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	gtk-update-icon-cache
-Requires:	Qt5Core >= %{qtver}
-Requires:	Qt5Svg >= %{qtver}
-Requires:	Qt5Widgets >= %{qtver}
+Requires:	Qt6Core >= %{qtver}
+Requires:	Qt6Svg >= %{qtver}
+Requires:	Qt6Widgets >= %{qtver}
 Requires:	hicolor-icon-theme
 Requires:	ka5-libkdegames >= 22.03.80
-Requires:	kf5-kcompletion >= %{kframever}
-Requires:	kf5-kconfig >= %{kframever}
-Requires:	kf5-kconfigwidgets >= %{kframever}
-Requires:	kf5-kcoreaddons >= %{kframever}
-Requires:	kf5-kcrash >= %{kframever}
-Requires:	kf5-kdbusaddons >= %{kframever}
-Requires:	kf5-kguiaddons >= %{kframever}
-Requires:	kf5-ki18n >= %{kframever}
-Requires:	kf5-kio >= %{kframever}
-Requires:	kf5-knewstuff >= %{kframever}
-Requires:	kf5-kwidgetsaddons >= %{kframever}
-Requires:	kf5-kxmlgui >= %{kframever}
+Requires:	kf6-kcompletion >= %{kframever}
+Requires:	kf6-kconfig >= %{kframever}
+Requires:	kf6-kconfigwidgets >= %{kframever}
+Requires:	kf6-kcoreaddons >= %{kframever}
+Requires:	kf6-kcrash >= %{kframever}
+Requires:	kf6-kdbusaddons >= %{kframever}
+Requires:	kf6-kguiaddons >= %{kframever}
+Requires:	kf6-ki18n >= %{kframever}
+Requires:	kf6-kio >= %{kframever}
+Requires:	kf6-knewstuff >= %{kframever}
+Requires:	kf6-kwidgetsaddons >= %{kframever}
+Requires:	kf6-kxmlgui >= %{kframever}
 Requires:	shared-mime-info
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -122,7 +122,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/knsrcfiles/kpat.knsrc
 %{_datadir}/metainfo/org.kde.kpat.appdata.xml
 %{_datadir}/mime/packages/kpatience.xml
-%{_datadir}/qlogging-categories5/kpat.categories
+%{_datadir}/qlogging-categories6/kpat.categories
 %{_mandir}/man6/kpat.6*
 %lang(ca) %{_mandir}/ca/man6/kpat.6*
 %lang(de) %{_mandir}/de/man6/kpat.6*
